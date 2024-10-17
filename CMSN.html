@@ -1,0 +1,129 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Chuỵ Chang</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1; 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fffaf0;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff69b4; 
+            text-shadow: 2px 2px 5px rgba(255, 182, 193, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 30px; 
+            background-color: #ffb6c1; 
+            border: none;
+            color: white;
+            transition: transform 0.2s, background-color 0.2s; 
+        }
+
+        .button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.1); 
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #congrats {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        #congrats h2 {
+            font-size: 2em;
+            color: #ff69b4;
+        }
+
+        #congrats p {
+            font-size: 1.2em;
+            color: #ff6347; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc mừng sinh nhật chuỵ Chang!</h1>
+        <button class="button" id="okButton">OK</button>
+        
+        <div id="ageOptions" class="hidden">
+            <button class="button" id="btn18">18 Tuổi</button>
+            <button class="button" id="btn21">21 Tuổi</button>
+        </div>
+    </div>
+
+    <div id="congrats">
+        <h2>Chúc mừng sinh nhật chuỵ!</h2>
+        <p>Chúc mừng sinh nhật chị yêu quý của em! 21 tuổi rồi, chúc chị 83 86. Chị sẽ ngày càng xinh đẹp, rực rỡ và thành công hơn nữa. Tiền bạc đầy túi, tình yêu đầy tim, sức khỏe dồi dào, hạnh phúc viên mãn. Sinh nhật vui vẻ nhé chuỵ Chang, yêu thương ngập tràn! 🎉
+        <button class="button" onclick="closeCongrats()">Đóng</button>
+    </div>
+
+    <script>
+        const okButton = document.getElementById("okButton");
+const ageOptions = document.getElementById("ageOptions");
+        const btn18 = document.getElementById("btn18");
+        const btn21 = document.getElementById("btn21");
+        const congrats = document.getElementById("congrats");
+
+        okButton.addEventListener("click", function() {
+            okButton.classList.add("hidden");
+            ageOptions.classList.remove("hidden");
+        });
+
+       
+        btn18.addEventListener("mouseover", moveButton);
+        btn18.addEventListener("click", moveButton);
+
+        function moveButton() {
+            const randomX = Math.floor(Math.random() * window.innerWidth) - 50;
+            const randomY = Math.floor(Math.random() * window.innerHeight) - 50;
+            btn18.style.position = "absolute";
+            btn18.style.left = `${randomX}px`;
+            btn18.style.top = `${randomY}px`;
+        }
+
+        btn21.addEventListener("click", function() {
+            ageOptions.classList.add("hidden");
+            congrats.style.display = "block";
+        });
+
+        function closeCongrats() {
+            congrats.style.display = "none";
+        }
+    </script>
+</body>
+</html><label></label><head></head>
